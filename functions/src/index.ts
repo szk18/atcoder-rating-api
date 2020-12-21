@@ -51,3 +51,7 @@ interface Record {
 //   message: string;
 //   rating?: number;
 // }
+
+export const getRatingColor = (ratingNum: number) => {
+  return;
+}
