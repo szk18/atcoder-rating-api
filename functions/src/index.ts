@@ -1,6 +1,9 @@
 import * as functions from "firebase-functions";
 import axios from "axios";
 
+import * as admin from 'firebase-admin';
+admin.initializeApp();
+
 export const rating = functions.https.onRequest(
   async (request, response) => {
     const { user } = request.query;
