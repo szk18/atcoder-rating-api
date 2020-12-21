@@ -52,6 +52,24 @@ interface Record {
 //   rating?: number;
 // }
 
-export const getRatingColor = (ratingNum: number) => {
-  return;
-}
+export const getRatingColor = (ratingNum: number): Color => {
+  if (ratingNum > 0 && ratingNum <= 400) return "gray";
+  else if (ratingNum > 400 && ratingNum <= 800) return "brown";
+  else if (ratingNum > 800 && ratingNum <= 1200) return "green";
+  else if (ratingNum > 1200 && ratingNum <= 1600) return "lightBlue";
+  else if (ratingNum > 1600 && ratingNum <= 2000) return "blue";
+  else if (ratingNum > 2000 && ratingNum <= 2400) return "yellow";
+  else if (ratingNum > 2400 && ratingNum <= 2800) return "orange";
+  else if (ratingNum > 2800) return "red";
+  else throw new RangeError();
+};
+
+type Color =
+  | "gray"
+  | "brown"
+  | "green"
+  | "lightBlue"
+  | "blue"
+  | "yellow"
+  | "orange"
+  | "red";
