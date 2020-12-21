@@ -25,8 +25,9 @@ export const rating = functions.https.onRequest(
 
       const latestRecord = data[data.length - 1];
       const { NewRating } = latestRecord;
+      const color = getRatingColor(NewRating);
 
-      response.status(200).send({ message: "success", rating: `${NewRating}` });
+      response.status(200).send({ message: "success", rating: `${NewRating}`, color });
       return;
     } catch (e) {
       response.status(503).send({ message: "server error" });
